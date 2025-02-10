@@ -1,0 +1,4 @@
+SQLAlchemy>=1.4
+psycopg2>=2.9
+requests>=24.0
+json>=24.0
