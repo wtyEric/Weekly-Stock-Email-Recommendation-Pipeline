@@ -6,3 +6,8 @@
 
 # Allow readme.md in the models folder to be tracked
 !/models/readme.md
+
+# Python cache directories
+__pycache__/
+*.py[cod]
+*$py.class

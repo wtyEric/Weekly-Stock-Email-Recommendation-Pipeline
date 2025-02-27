@@ -12,6 +12,7 @@ if response.status_code == 200:
     # Parse the JSON response
     data = response.json()
     stock_dict ={}
+    stock_dict["恒生指數"]="^HSI"
     # Extract the relevant information
     for item in data["indexSeriesList"][0]["indexList"][0]["subIndexList"]:
         for data in item["constituentContent"]:
