@@ -1,9 +1,9 @@
 import numpy as np
 
-def create_dataset(data, window_size=20, future_window=5):
+def create_dataset(data, window_size=20, future_window=5,data_cutting = 3):
     max_index = len(data) - window_size - future_window
     train_data, price = [], []
-    for i in range(0,max_index + 1,window_size):
+    for i in range(0,max_index + 1,data_cutting):
         
         # Get  features
         window = data.iloc[i:(i + window_size)].copy()

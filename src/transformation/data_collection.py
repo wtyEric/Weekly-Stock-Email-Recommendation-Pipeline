@@ -50,7 +50,7 @@ def get_stock_data(ticker_symbol, period='20y', interval='1d'):
     df['donchian_lower'] = donchian.donchian_channel_lband()
     df['std_dev'] = df['close'].rolling(window=20).std()
     
-    new_order=['macd_DIF', 'macd_SIGNAL', 'macd_HIST', 'EMA5', 'EMA10', 'EMA25', 'rsi_14', 'rsi_9', 'stoch_%K', 'stoch_%D', 'bb_%b', 'DMP', 'CMF', 'ROC', 'TRIX', 'williams_%R']
+    new_order=['macd_DIF', 'macd_SIGNAL', 'macd_HIST', 'EMA5', 'EMA10', 'EMA25', 'rsi_14', 'rsi_9', 'stoch_%K', 'stoch_%D', 'bb_%b', 'DMP', 'CMF', 'ROC', 'TRIX', 'williams_%R','close']
     df = df[new_order]
     # Return training data starting from index 50 to ensure all indicators have values
     training_data = df.loc[50:]
