@@ -1,2 +1,8 @@
-/models/
+# Ignore the .env file
 .env
+
+# Ignore everything in the models folder
+/models/*
+
+# Allow readme.md in the models folder to be tracked
+!/models/readme.md
