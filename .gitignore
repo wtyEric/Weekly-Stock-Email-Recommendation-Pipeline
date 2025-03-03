@@ -7,6 +7,12 @@
 # Allow readme.md in the models folder to be tracked
 !/models/readme.md
 
+
+# ignore changes to this specific file
+# git update-index --skip-worktree src/model_training/model_training.ipynb
+# track changes to this file again
+# git update-index --no-skip-worktree src/model_training/model_training.ipynb
+
 # Python cache directories
 __pycache__/
 *.py[cod]
