@@ -4,9 +4,9 @@
 # Ignore everything in the models folder
 /models/*
 
-# Allow readme.md in the models folder to be tracked
+# Allow readme.md & simple_testing_model_HSI.h5 in the models folder to be tracked
 !/models/readme.md
-
+!/models/simple_testing_model_HSI.h5
 
 # ignore changes to this specific file
 # git update-index --skip-worktree src/model_training/model_training.ipynb
