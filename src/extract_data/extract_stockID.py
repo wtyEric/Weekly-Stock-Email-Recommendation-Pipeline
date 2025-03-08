@@ -19,13 +19,9 @@ if response.status_code == 200:
             code = data["code"]
             stock_ID = f"{code.zfill(4)}.HK"
             stock_dict[data["constituentName"].replace(" - ", "-")]=stock_ID
-   
-
-
-
     
     # Save the data in the desired JSON format
-    with open('../model_training/stocks_ID.json', 'w', encoding='utf-8') as json_file:
+    with open('../utils/stocks_ID.json', 'w', encoding='utf-8') as json_file:
         json.dump(stock_dict, json_file, ensure_ascii=False, indent=4)
     
     print("Data saved to stocks.json")
