@@ -27,13 +27,12 @@ def get_stock_data(ticker_symbol, period='20y', interval='1d'):
     bb = ta.volatility.BollingerBands(close=df['close'], window=20, window_dev=2)
     df['bb_%b'] = bb.bollinger_pband()  # %B indicator
     df['DMP'] = ta.trend.ADXIndicator(high=df['high'], low=df['low'], close=df['close'], window=14).adx_pos()
-    df['CMF'] = ta.volume.chaikin_money_flow(high=df['high'], low=df['low'], close=df['close'], volume=df['volume'], window=20)
     df['ROC'] = ta.momentum.roc(close=df['close'], window=14)
     df['TRIX'] = ta.trend.trix(close=df['close'], window=15)
     df['williams_%R'] = ta.momentum.williams_r(high=df['high'], low=df['low'], close=df['close'], lbp=14)
 
     
-    new_order=['macd_DIF', 'macd_SIGNAL', 'macd_HIST', 'EMA5', 'EMA10', 'EMA25', 'rsi_14', 'rsi_9', 'stoch_%K', 'stoch_%D', 'bb_%b', 'DMP', 'CMF', 'ROC', 'TRIX', 'williams_%R','close']
+    new_order=['macd_DIF', 'macd_SIGNAL', 'macd_HIST', 'EMA5', 'EMA10', 'EMA25', 'rsi_14', 'rsi_9', 'stoch_%K', 'stoch_%D', 'bb_%b', 'DMP', 'ROC', 'TRIX', 'williams_%R','close']
     df = df[new_order]
     # Return training data starting from index 50 to ensure all indicators have values
     training_data = df.loc[50:]
