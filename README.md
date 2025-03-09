@@ -1,6 +1,6 @@
 # Weekly Stock Recommend Pipeline
 
-A data-driven pipeline that generates weekly stock recommendations and sends them via email. This project uses a **CNN + BiLSTM + Self-Attention model** to analyze 20-day historical data and predict 5-day stock trends, recommending the top 5 stocks with the highest percentage gain from the **Hang Seng Index**. The project demonstrates advanced skills in **data engineering**, **machine learning**, and **backend development**.
+A data-driven pipeline that generates weekly stock recommendations and sends them via email. This project uses a **CNN + BiLSTM + Self-Attention model** to analyze 25-day historical data and predict 5-day stock trends, recommending the top 5 stocks with the highest percentage gain from the **Hang Seng Index**. The project demonstrates advanced skills in **data engineering**, **machine learning**, and **backend development**.
 
 ---
 
@@ -48,8 +48,8 @@ A data-driven pipeline that generates weekly stock recommendations and sends the
 ## Pipeline Workflow
 
 1. **Data Collection**:
-    - Fetch 20 days of historical stock data for all stocks in the **Hang Seng Index**.
-    - Store raw data in cloud storage (e.g., AWS S3).
+    - Fetch 25 days of historical stock data for all stocks in the **Hang Seng Index**.
+
 
 2. **Data Preprocessing**:
     - Clean and normalize the data using Python and Pandas.
