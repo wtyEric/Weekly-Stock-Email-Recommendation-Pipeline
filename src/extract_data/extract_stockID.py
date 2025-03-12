@@ -27,8 +27,10 @@ if response.status_code == 200:
     stock_dict.pop("華潤萬象生活")
     stock_dict.pop("九龍倉置業")
     stock_dict.pop("東方海外國際")
-    stock_dict.pop(" 中國石油化工股份")
-
+    stock_dict.pop("中國石油化工股份")
+    stock_dict.pop("信義光能")
+    stock_dict.pop("恒安國際")
+    stock_dict.pop("中國神華")
     
     # Save the data in the desired JSON format
     with open('../utils/stocks_ID.json', 'w', encoding='utf-8') as json_file:
