@@ -37,6 +37,12 @@ if response.status_code == 200:
     stock_dict.pop("中國宏橋")
     stock_dict.pop("百威亞太")
     stock_dict.pop("金沙中國有限公司")
+    stock_dict.pop("周大福")
+    stock_dict.pop("理想汽車-W")
+    stock_dict.pop("安踏體育")
+    stock_dict.pop("藥明生物")
+
+
 
 
     # Save the data in the desired JSON format
