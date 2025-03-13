@@ -40,7 +40,6 @@ if response.status_code == 200:
     stock_dict.pop("周大福")
     stock_dict.pop("理想汽車-W")
     stock_dict.pop("安踏體育")
-    stock_dict.pop("藥明生物")
 
 
 
