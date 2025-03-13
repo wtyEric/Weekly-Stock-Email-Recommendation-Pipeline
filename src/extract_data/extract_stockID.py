@@ -33,6 +33,9 @@ if response.status_code == 200:
     stock_dict.pop("中國神華")
     stock_dict.pop("國藥控股")
     stock_dict.pop("中國生物製藥")
+    stock_dict.pop("比亞迪股份")
+    stock_dict.pop("中國宏橋")
+
 
     # Save the data in the desired JSON format
     with open('../utils/stocks_ID.json', 'w', encoding='utf-8') as json_file:
