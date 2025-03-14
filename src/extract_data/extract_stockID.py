@@ -40,6 +40,14 @@ if response.status_code == 200:
     stock_dict.pop("周大福")
     stock_dict.pop("理想汽車-W")
     stock_dict.pop("安踏體育")
+    stock_dict.pop("申洲國際")
+    stock_dict.pop("翰森製藥")
+    stock_dict.pop("海爾智家")
+    stock_dict.pop("海底撈")
+    stock_dict.pop("農夫山泉")
+    stock_dict.pop("新東方-S")
+    stock_dict.pop("攜程集團-S")
+  
 
 
 
