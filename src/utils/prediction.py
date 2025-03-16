@@ -27,7 +27,7 @@ def preparing_prediction_data(ticker_symbol):
         model_predict_data = np.array(data_scaled)
         return raw_data,model_predict_data[np.newaxis,:],max_val,min_val
 
-def prediction(ticker_symbol):
+def stock_prediction(ticker_symbol):
     raw_data,model_predict_data,max_val, min_val = preparing_prediction_data(ticker_symbol)
     temp_model_path = f"../../models/{ticker_symbol}.h5"
     model = load_model(temp_model_path, custom_objects={'sign_accuracy': sign_accuracy})
@@ -38,12 +38,6 @@ def prediction(ticker_symbol):
     return predicted_prices_normal,percentage_change
 
 
-
-if __name__ == '__main__':
-    ticker_symbol = "^HSI"
-    predicted_prices,percentage_change = prediction(ticker_symbol)
-    print(predicted_prices)
-    print(percentage_change)
 
 
    
