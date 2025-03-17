@@ -4,7 +4,6 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from src.transformation import data_collection
-import pandas as pd
 import numpy as np
 
 def sign_accuracy(y_true, y_pred):
