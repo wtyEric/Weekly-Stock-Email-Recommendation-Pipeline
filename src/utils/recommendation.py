@@ -25,3 +25,23 @@ def get_all_predictions():
             continue
     return predictions
 
+def get_top20_stock_predictions():
+    """Get predictions for all stocks in the JSON file and return the top 20 along with HSI data."""
+    all_predictions = get_all_predictions()
+    # Extract HSI data and remove it from the predictions dictionary
+    hsi_data = all_predictions.pop('恒生指數', None)
+    # Sort the remaining stocks by percentage_change in descending order
+    sorted_stocks = sorted(
+        all_predictions.items(),
+        key=lambda item: item[1]['percentage_change'],
+        reverse=True
+    )
+
+    # Take the top 20 entries and convert back to a dictionary
+    top20 = {stock[0]: stock[1] for stock in sorted_stocks[:20]}
+    print(top20)
+    return {
+        'HSI': {'恒生指數':hsi_data},
+        'top20': top20
+    }
+
