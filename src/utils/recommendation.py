@@ -1,6 +1,9 @@
 import json
 import os
-import prediction
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+from src.utils import prediction
+
 
 def load_stock_ids():
     """Load stock IDs from JSON file"""

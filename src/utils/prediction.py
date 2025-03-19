@@ -28,7 +28,7 @@ def preparing_prediction_data(ticker_symbol):
 
 def stock_prediction(ticker_symbol):
     raw_data,model_predict_data,max_val, min_val = preparing_prediction_data(ticker_symbol)
-    temp_model_path = f"../../models/{ticker_symbol}.h5"
+    temp_model_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'models', f'{ticker_symbol}.h5')
     model = load_model(temp_model_path, custom_objects={'sign_accuracy': sign_accuracy})
     predicted_prices = model.predict(model_predict_data)
     predicted_prices_normal = np.array(((predicted_prices) * (max_val["close"] - min_val["close"]) + min_val["close"])[0])
