@@ -2,6 +2,8 @@ SQLAlchemy>=1.4
 psycopg2>=2.9
 requests>=24.0
 json>=24.0
+Flask>=3.0.0
+Flask-Cors>=4.0.0
 
 pandas==2.2.2
 numpy==1.26.4
