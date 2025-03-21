@@ -19,10 +19,17 @@ pip install -r requirements.txt
 
 ## Usage
 
-1. Start the server:
+1.1 Start the server:
 ```bash
 python app.py
 ```
+
+1.2 Build and Run the Docker Container:
+```bash
+docker build -t stock-prediction-api .
+docker run -p 5000:5000 stock-prediction-api
+```
+
 
 2. Access the API endpoint:
 - GET `/api/predictions`
