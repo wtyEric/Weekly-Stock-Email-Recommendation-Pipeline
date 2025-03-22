@@ -1,0 +1,2 @@
+# Run main.py weekly on Sunday at midnight
+0 0 * * 0 python /app/main.py
