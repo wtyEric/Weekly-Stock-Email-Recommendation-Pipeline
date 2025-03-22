@@ -14,7 +14,14 @@ A data-driven pipeline that generates weekly stock recommendations and sends the
 - **Scalable Design**: Designed for scalability and extensibility.
 
 ---
+## Usage
 
+1 Build and Run the Docker Container:
+```bash
+docker build -t stock-prediction-pipeline .
+docker run -d stock-prediction-pipeline
+```
+---
 ## Methodology
 
 ### **Approach**
