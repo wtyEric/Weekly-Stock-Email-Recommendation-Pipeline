@@ -32,6 +32,7 @@ def send_stock_recommendation_email(prediction_result, receiver_email):
                 <li><strong>Predicted Prices:</strong> {hsi_predicted_prices}</li>
                 <li><strong>Percentage Change:</strong> {hsi_percentage_change:.2f}%</li>
             </ul>
+            <li><strong>Top Weight Stocks:</strong> {top_weight}</li>
         </ul>
         <h3>Top 20 Stock Predictions</h3>
         <table border="1" cellpadding="5" cellspacing="0">
@@ -52,6 +53,7 @@ def send_stock_recommendation_email(prediction_result, receiver_email):
     hsi_stock_id = hsi_data['stock_id']
     hsi_predicted_prices = ', '.join(map(str, hsi_data['prediction']))
     hsi_percentage_change = hsi_data['percentage_change']
+    hsi_top_weight= prediction_result['top_weight']
 
     # Generate table rows for each stock
     stock_rows = ""
@@ -71,7 +73,8 @@ def send_stock_recommendation_email(prediction_result, receiver_email):
         hsi_stock_id=hsi_stock_id,
         hsi_predicted_prices=hsi_predicted_prices,
         hsi_percentage_change=hsi_percentage_change,
-        stock_rows=stock_rows
+        stock_rows=stock_rows,
+        top_weight=hsi_top_weight
     )
     message.attach(MIMEText(body, "html"))
 

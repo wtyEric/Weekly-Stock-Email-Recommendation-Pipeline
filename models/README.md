@@ -2,7 +2,7 @@
 
 Welcome to the **Stock Price Prediction Model** repository! This is a machine learning model designed to predict stock prices based on historical data and other relevant features.
 
-You can test the Stock Price Prediction API using the **simple_testing_model_HSI** model which also has sign_accuracy: 0.6
+You can test the Stock Price Prediction API using the **simple_testing_model_HSI**
 The Full model is not directly included in this repository.
 
 ## How to Access the Full Model

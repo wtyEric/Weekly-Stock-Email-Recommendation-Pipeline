@@ -5,15 +5,15 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(
 from src.utils import prediction
 
 
-def load_stock_ids():
+def load_stock_ids(json_name):
     """Load stock IDs from JSON file"""
-    json_path = os.path.join(os.path.dirname(__file__), 'stocks_ID.json')
+    json_path = os.path.join(os.path.dirname(__file__), json_name)
     with open(json_path, 'r', encoding='utf-8') as f:
         return json.load(f)
     
 def get_all_predictions():
     """Get predictions for all stocks in the JSON file"""
-    stocks = load_stock_ids()
+    stocks = load_stock_ids("stocks_ID.json")
     predictions = {}
     for name, stock_id in stocks.items():
         try:
@@ -31,6 +31,11 @@ def get_all_predictions():
 def get_top20_stock_predictions():
     """Get predictions for all stocks in the JSON file and return the top 20 along with HSI data."""
     all_predictions = get_all_predictions()
+    top16_stock = load_stock_ids("top16_stock.json")
+    number_of_positive=0
+    for stock_name in top16_stock:
+        if stock_name in all_predictions and all_predictions[stock_name]['percentage_change'] > 0:
+            number_of_positive += 1
     # Extract HSI data and remove it from the predictions dictionary
     hsi_data = all_predictions.pop('恒生指數', None)
     # Sort the remaining stocks by percentage_change in descending order
@@ -45,6 +50,7 @@ def get_top20_stock_predictions():
     print(top20)
     return {
         'HSI': {'恒生指數':hsi_data},
+        'top_weight':f"{number_of_positive} stocks are positive over the top 16 weight stocks in HSI",
         'top20': top20
     }
 
